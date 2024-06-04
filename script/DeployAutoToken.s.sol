@@ -6,12 +6,12 @@ import {AutoToken} from "../src/AutoToken.sol";
 
 contract DeployAutoToken is Script {
     uint256 private constant INITIAL_SUPPLY = 100 ether;
-    function run() external returns (string memory) {
+    function run() external returns (string memory, address) {
         AutoToken autoToken;
         vm.startBroadcast();
         autoToken = new AutoToken(INITIAL_SUPPLY);
         vm.stopBroadcast();
 
-        return ("This is your token address: autoToken");
+        return ("Your token address is: ", address(autoToken));
     }
 }
