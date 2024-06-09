@@ -19,7 +19,6 @@ contract AutoTokenTest is Test {
     //AutoToken
     function testInitialSupplyIsMintedForMsgSender() public view {
         uint256 ownerBalance = autoToken.balanceOf(OWNER);
-        console.log(ownerBalance);
         assert(ownerBalance > 0);
     }
 }
